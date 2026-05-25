@@ -8,6 +8,8 @@ from email.mime.multipart import MIMEMultipart
 
 HEADERS = {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}
 NOTIFY_EMAIL = 'puhoi125@mail.ru'
+SMTP_HOST = 'smtp.mail.ru'
+SMTP_PORT = 465
 TYPE_LABELS = {'student': 'Студент', 'employee': 'Сотрудник'}
 
 
@@ -44,7 +46,7 @@ def send_notification(name: str, email: str, type_: str):
 
     msg.attach(MIMEText(html, 'html', 'utf-8'))
 
-    with smtplib.SMTP_SSL('smtp.mail.ru', 465) as server:
+    with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT) as server:
         server.login(NOTIFY_EMAIL, smtp_password)
         server.sendmail(NOTIFY_EMAIL, NOTIFY_EMAIL, msg.as_string())
 
