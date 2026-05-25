@@ -146,6 +146,12 @@ export const Hero3DWebGL = () => {
       </div>
 
       <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
+        <img
+          src="https://cdn.poehali.dev/projects/2d372365-468b-47e6-9b42-8378d1fd3eda/bucket/e84aa4aa-ab01-4391-a4fe-cee8cdf05e27.png"
+          alt="Помощник.ру"
+          className="w-24 h-24 md:w-32 md:h-32 object-contain mb-4 fade-in"
+          style={{ opacity: 1 }}
+        />
         <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
           <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
             {titleWords.map((word, index) => (
